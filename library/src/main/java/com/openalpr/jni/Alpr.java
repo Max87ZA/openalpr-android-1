@@ -79,7 +79,7 @@ public class Alpr {
             return new AlprResults(json);
         } catch (JSONException e)
         {
-            throw new AlprException("Unable to parse ALPR results");
+            throw new AlprException("AlprException Unable to parse ALPR results");
         }
     }
 

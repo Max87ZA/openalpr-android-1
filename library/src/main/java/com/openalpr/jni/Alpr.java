@@ -1,6 +1,7 @@
 package com.openalpr.jni;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.openalpr.jni.json.JSONException;
 import com.openalpr.jni.utils.Utils;
@@ -33,6 +34,7 @@ public class Alpr {
     private native void detect_region(boolean detectRegion);
     private native void set_top_n(int topN);
     private native String get_version();
+    private static final String LCAT = "Alpr";
 
     public Alpr(Context context, String androidDataDir, String country, String configFile, String runtimeDir) {
 
@@ -52,7 +54,7 @@ public class Alpr {
     public AlprResults recognize(String imageFile) throws AlprException {
         try {
             String json = native_recognize(imageFile);
-            Log.i("alpr", "recognized JSON "+json);
+            Log.i(LCAT, "recognize result: "+json);
             return new AlprResults(json);
         } catch (JSONException e)
         {

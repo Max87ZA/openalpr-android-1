@@ -43,7 +43,7 @@ public class AlprResults {
             AlprRegionOfInterest roi = new AlprRegionOfInterest(roiObj);
             regionsOfInterest.add(roi);
         }
-        Log.i("alprresults", "alprResults "+jobj.toString());
+        
     }
 
     public long getEpochTime() {

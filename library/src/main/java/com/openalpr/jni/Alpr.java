@@ -52,6 +52,7 @@ public class Alpr {
     public AlprResults recognize(String imageFile) throws AlprException {
         try {
             String json = native_recognize(imageFile);
+            Log.i("alpr", "recognized JSON "+json);
             return new AlprResults(json);
         } catch (JSONException e)
         {
@@ -63,6 +64,7 @@ public class Alpr {
     public AlprResults recognize(byte[] imageBytes) throws AlprException {
         try {
             String json = native_recognize(imageBytes);
+
             return new AlprResults(json);
         } catch (JSONException e)
         {

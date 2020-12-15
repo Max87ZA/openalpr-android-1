@@ -17,6 +17,7 @@ public class Alpr {
         System.loadLibrary("opencv_java3");
         System.loadLibrary("openalpr");
         System.loadLibrary("openalprjni");
+        nativeClassInit();
     }
 
     private native void initialize(String country, String configFile, String runtimeDir);
